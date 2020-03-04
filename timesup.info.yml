@@ -1,0 +1,5 @@
+name: Times'up
+description: 'Provides cache-tags to deal with time sensitive data.'
+package: Cache
+type: module
+core: '8.x'

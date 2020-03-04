@@ -1,0 +1,31 @@
+services:
+  timesup.chain_periodicity_resolver:
+    class: Drupal\timesup\Resolver\ChainPeriodicityResolver
+    tags:
+      - { name: service_collector, call: addResolver, tag: timesup.periodicity_resolver }
+
+  timesup.periodicity_resolver.base:
+    private: true
+    class: Drupal\timesup\Periodicity\PeriodicityBaseResolver
+    arguments: ['@cache_tags.invalidator', '@state', '@datetime.time', '@logger.factory']
+
+  timesup.periodicity_resolver.minutely:
+    class: Drupal\timesup\Periodicity\MinutelyResolver
+#    arguments: ['@cache_tags.invalidator', '@state']
+    parent: timesup.periodicity_resolver.base
+    tags:
+      - { name: timesup.periodicity_resolver, priority: 0 }
+
+  timesup.periodicity_resolver.hourly:
+    class: Drupal\timesup\Periodicity\HourlyResolver
+#    arguments: ['@cache_tags.invalidator', '@state']
+    parent: timesup.periodicity_resolver.base
+    tags:
+      - { name: timesup.periodicity_resolver, priority: 100 }
+
+  timesup.periodicity_resolver.daily:
+    class: Drupal\timesup\Periodicity\DailyResolver
+#    arguments: ['@cache_tags.invalidator', '@state']
+    parent: timesup.periodicity_resolver.base
+    tags:
+      - { name: timesup.periodicity_resolver, priority: 200 }

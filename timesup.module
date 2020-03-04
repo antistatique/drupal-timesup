@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Module file for timesup.
+ */
+
+/**
+ * Implements hook_cron().
+ *
+ * Adds clean up job to drop expired cache tags.
+ */
+function timesup_cron() {
+  $timesup_chain = \Drupal::service('timesup.chain_periodicity_resolver');
+  $timesup_chain->process();
+}
