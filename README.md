@@ -11,12 +11,15 @@ Provides cache-tags to deal with time sensitive data.
 - You want to regenerate caches of specific render-array based on a time
 E.g. Refresh the cache of my listing of Events every day.
 
+- You're using a CDN or any Reverse Proxy and you're aware of the Drupal limitation of `Max-Age` bubbling but still 
+need to invalidate content based on time dimensions. See [#2352009](https://www.drupal.org/project/drupal/issues/2352009)
+
 - You want to extend the existing feature with your own Periodicity Resolver
 E.g. Refresh the cache of my listing of Events every 7th of the month.
 
 ## Features
 
-* Cache-tags by hours, days and moths to invalidate render-array.
+* Cache-tags by minutes, hours, days and months to invalidate render-array.
 
 * Invalidation occurs using the Drupal Cron system.
 
