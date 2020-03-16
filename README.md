@@ -29,12 +29,12 @@ E.g. Refresh the cache of my listing of Events every 7th of the month.
 
 The system will store the last run of every periodicity (daily, weekly, ...) and use this date as relative to invalidate caches.
 
-It means that `timesup::daily` will re-invalidate content only 1 day after his last run. 
+It means that `timesup:daily` will re-invalidate content only 1 day after his last run. 
 
-* `timesup::daily`: Will invalidate content every day
-* `timesup::weekly`: Will invalidate content every week
-* `timesup::hourly`: Will invalidate content every hour
-* `timesup::minutely`: Will invalidate content every minute
+* `timesup:daily`: Will invalidate content every day
+* `timesup:weekly`: Will invalidate content every week
+* `timesup:hourly`: Will invalidate content every hour
+* `timesup:minutely`: Will invalidate content every minute
 
 ## Times'up versions
 
