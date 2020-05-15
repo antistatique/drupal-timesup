@@ -11,21 +11,24 @@ services:
 
   timesup.periodicity_resolver.minutely:
     class: Drupal\timesup\Periodicity\MinutelyResolver
-#    arguments: ['@cache_tags.invalidator', '@state']
     parent: timesup.periodicity_resolver.base
     tags:
       - { name: timesup.periodicity_resolver, priority: 0 }
 
   timesup.periodicity_resolver.hourly:
     class: Drupal\timesup\Periodicity\HourlyResolver
-#    arguments: ['@cache_tags.invalidator', '@state']
     parent: timesup.periodicity_resolver.base
     tags:
       - { name: timesup.periodicity_resolver, priority: 100 }
 
   timesup.periodicity_resolver.daily:
     class: Drupal\timesup\Periodicity\DailyResolver
-#    arguments: ['@cache_tags.invalidator', '@state']
+    parent: timesup.periodicity_resolver.base
+    tags:
+      - { name: timesup.periodicity_resolver, priority: 200 }
+
+  timesup.periodicity_resolver.midnight:
+    class: Drupal\timesup\Periodicity\MidnightResolver
     parent: timesup.periodicity_resolver.base
     tags:
       - { name: timesup.periodicity_resolver, priority: 200 }

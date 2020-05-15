@@ -36,6 +36,10 @@ It means that `timesup:daily` will re-invalidate content only 1 day after his la
 * `timesup:hourly`: Will invalidate content every hour
 * `timesup:minutely`: Will invalidate content every minute
 
+Timesup also expose a some less-relative cache invalidation.
+
+* `timesup:midnight`: Will invalidate content every day at midnight
+
 ## Times'up versions
 
 Times'up is only available for Drupal 8 !
