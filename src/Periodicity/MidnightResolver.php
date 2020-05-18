@@ -4,6 +4,7 @@ namespace Drupal\timesup\Periodicity;
 
 use Drupal\Core\Datetime\DrupalDateTime;
 use DateTimeZone;
+use Drupal\Component\Datetime\DateTimePlus;
 
 /**
  * The midnight resolver which only apply once by day at midnight.
@@ -31,10 +32,10 @@ class MidnightResolver extends PeriodicityBaseResolver {
   /**
    * Get the DrupalDateTime object of Today at Midnight as UTC as Timezone.
    *
-   * @return \DateTime
+   * @return \Drupal\Component\Datetime\DateTimePlus
    *   The Today at Midnight DrupalDateTime object.
    */
-  protected function getTodayMidnight(): \DateTime {
+  protected function getTodayMidnight(): DateTimePlus {
     $today_midnight = new DrupalDateTime(NULL, new DateTimeZone('UTC'));
     $today_midnight->setTime(0, 0, 0);
     return $today_midnight;

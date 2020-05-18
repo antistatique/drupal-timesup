@@ -10,6 +10,7 @@ use Drupal\Core\State\StateInterface;
 use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
 use Drupal\timesup\Periodicity\MidnightResolver;
 use Drupal\Tests\UnitTestCase;
+use Drupal\Component\Datetime\DateTimePlus;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\MidnightResolver
@@ -82,7 +83,7 @@ final class MidnightResolverTest extends UnitTestCase {
     $this->time->expects($this->any())
       ->method('getRequestTime')->willReturn($request_time);
 
-    $today_midnight = new \DateTime(NULL, new \DateTimeZone('UTC'));
+    $today_midnight = new DateTimePlus(NULL, new \DateTimeZone('UTC'));
     $today_midnight->setTimestamp($request_time);
     $today_midnight->setTime(0, 0);
 
