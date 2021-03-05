@@ -11,8 +11,9 @@ Provides cache-tags to deal with time sensitive data.
 - You want to regenerate caches of specific render-array based on a time
 E.g. Refresh the cache of my listing of Events every day.
 
-- You're using a CDN or any Reverse Proxy and you're aware of the Drupal limitation of `Max-Age` bubbling but still 
-need to invalidate content based on time dimensions. See [#2352009](https://www.drupal.org/project/drupal/issues/2352009)
+- You're using a CDN or any Reverse Proxy and you're aware of the Drupal
+limitation of `Max-Age` bubbling but still need to invalidate content based on
+time dimensions. See [#2352009](https://www.drupal.org/project/drupal/issues/2352009)
 
 - You want to extend the existing feature with your own Periodicity Resolver
 E.g. Refresh the cache of my listing of Events every 7th of the month.
@@ -27,9 +28,11 @@ E.g. Refresh the cache of my listing of Events every 7th of the month.
 
 ## Defaults exposed cache tags
 
-The system will store the last run of every periodicity (daily, weekly, ...) and use this date as relative to invalidate caches.
+The system will store the last run of every periodicity (daily, weekly, ...)
+and use this date as relative to invalidate caches.
 
-It means that `timesup:daily` will re-invalidate content only 1 day after his last run. 
+It means that `timesup:daily` will re-invalidate content only 1 day after his
+last run. 
 
 * `timesup:daily`: Will invalidate content every day
 * `timesup:weekly`: Will invalidate content every week
@@ -53,7 +56,8 @@ recommended to keep Drupal core installations up to date.
 The Drupal 8 version of Times'up requires nothing !
 Feel free to use it.
 
-Times'up requires PHP 7.0+ to works properly. We recommend updating to at least PHP 7.2 if possible, and ideally PHP 7.4, which is supported as of Drupal 8.8.0.
+Times'up requires PHP 7.0+ to works properly. We recommend updating to at least
+PHP 7.2 if possible, and ideally PHP 7.4, which is supported as of Drupal 8.8.0.
 
 ## Supporting organizations
 

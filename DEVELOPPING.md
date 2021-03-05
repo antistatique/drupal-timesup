@@ -119,7 +119,8 @@ Copy/Paste Detector
 
 PhpCodeFixer
 
-  A scanner that checks compatibility of your code with new interpreter versions.
+  A scanner that checks compatibility of your code with new interpreter
+  versions.
 
   ```bash
   ./vendor/bin/phpcf ./web/modules/custom

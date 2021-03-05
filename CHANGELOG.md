@@ -9,4 +9,5 @@ CHANGELOG
 
 I'm proud to present the first alpha release of Times'up for Drupal 8.
 
-Times'up module provides cache-tags to deal with time sensitive data that can improve development experience.
+Times'up module provides cache-tags to deal with time sensitive data that can
+improve development experience.
