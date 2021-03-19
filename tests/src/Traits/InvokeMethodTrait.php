@@ -2,8 +2,6 @@
 
 namespace Drupal\Tests\timesup\Traits;
 
-use ReflectionClass;
-
 /**
  * Provides a function to invoke protected/private methods of a class.
  */
@@ -27,7 +25,7 @@ trait InvokeMethodTrait {
    * @throws \ReflectionException
    */
   protected function invokeMethod(&$object, $method_name, array $parameters = [], array $protected_properties = []) {
-    $reflection = new ReflectionClass(get_class($object));
+    $reflection = new \ReflectionClass(get_class($object));
 
     foreach ($protected_properties as $property => $value) {
       $property = $reflection->getProperty($property);

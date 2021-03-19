@@ -3,7 +3,6 @@
 namespace Drupal\timesup\Periodicity;
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use DateTimeZone;
 use Drupal\Component\Datetime\DateTimePlus;
 
 /**
@@ -36,7 +35,7 @@ class MidnightResolver extends PeriodicityBaseResolver {
    *   The Today at Midnight DrupalDateTime object.
    */
   protected function getTodayMidnight(): DateTimePlus {
-    $today_midnight = new DrupalDateTime(NULL, new DateTimeZone('UTC'));
+    $today_midnight = new DrupalDateTime(NULL, new \DateTimeZone('UTC'));
     $today_midnight->setTime(0, 0, 0);
     return $today_midnight;
   }
