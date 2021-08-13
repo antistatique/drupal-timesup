@@ -29,7 +29,7 @@ class WeeklyResolverTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  public function setUp(): void {
     $this->cacheTagsInvalidator = $this->getMockBuilder(CacheTagsInvalidatorInterface::class)
       ->disableOriginalConstructor()
       ->getMock();
