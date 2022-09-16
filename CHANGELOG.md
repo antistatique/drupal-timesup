@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - replace drupal_ti by wengerk/drupal-for-contrib
 - move changelog format in order to use Keep a Changelog standard
 
+### Removed
+- disable symfony deprecations helper on phpunit
+
 ## [1.0.0-alpha1] - 2020-03-27
 ### Added
 - init module
