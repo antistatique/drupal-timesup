@@ -1,13 +1,20 @@
-CHANGELOG
----------
+# Changelog
+All notable changes to this project will be documented in this file.
 
-## NEXT RELEASE
- - replace drupal_ti by wengerk/drupal-for-contrib
- - add midnight resolver
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 8.x-1.0-alpha1 (2020-03-27)
+## [Unreleased]
+### Added
+- add midnight resolver
 
-I'm proud to present the first alpha release of Times'up for Drupal 8.
+### Changed
+- replace drupal_ti by wengerk/drupal-for-contrib
+- move changelog format in order to use Keep a Changelog standard
 
-Times'up module provides cache-tags to deal with time sensitive data that can
-improve development experience.
+## [1.0.0-alpha1] - 2020-03-27
+### Added
+- init module
+
+[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/8.x-1.0-alpha1...HEAD
+[1.0.0-alpha1]: https://github.com/antistatique/drupal-timesup/releases/tag/8.x-1.0-alpha1
