@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - add midnight resolver
 - add dependabot for Github Action dependency
+- add support Drupal 9.4 & 9.5
 
 ### Changed
 - replace drupal_ti by wengerk/drupal-for-contrib
@@ -15,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - disable symfony deprecations helper on phpunit
+- drop support Drupal 8.8
 
 ## [1.0.0-alpha1] - 2020-03-27
 ### Added
