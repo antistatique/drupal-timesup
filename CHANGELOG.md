@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add midnight resolver
 - add dependabot for Github Action dependency
 - add support Drupal 9.4 & 9.5
+- add upgrade-status check
 
 ### Changed
 - replace drupal_ti by wengerk/drupal-for-contrib
