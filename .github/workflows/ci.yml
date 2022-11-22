@@ -37,7 +37,7 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.4']
+        drupal_version: ['9.4', '9.5']
         module: ['timesup']
 
     steps:
