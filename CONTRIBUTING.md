@@ -18,7 +18,7 @@ Github repo
 
   ```bash
   git remote add github \
-  https://github.com/antistatique/drupal-timesup.git
+  git@github.com:antistatique/drupal-loco-translate.git
   ```
 
 ## 🔧 Prerequisites
