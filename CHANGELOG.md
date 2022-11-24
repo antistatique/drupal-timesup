@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix Issue #3318856 by solantoast: The 'core_version_requirement' constraint (^9) requires the 'core' key not be set
 
+### Added
+- add support Drupal 9.5
+
 ## [1.0.0] - 2022-10-21
 ### Added
 - add midnight resolver
