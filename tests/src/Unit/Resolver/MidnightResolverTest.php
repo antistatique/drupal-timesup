@@ -83,7 +83,7 @@ final class MidnightResolverTest extends UnitTestCase {
     $this->time->expects($this->any())
       ->method('getRequestTime')->willReturn($request_time);
 
-    $today_midnight = new DateTimePlus(NULL, new \DateTimeZone('UTC'));
+    $today_midnight = new DateTimePlus('now', new \DateTimeZone('UTC'));
     $today_midnight->setTimestamp($request_time);
     $today_midnight->setTime(0, 0);
 
