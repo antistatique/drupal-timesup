@@ -7,9 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - fix Issue #3318856 by solantoast: The 'core_version_requirement' constraint (^9) requires the 'core' key not be set
+- fix call to deprecated method setMethods()
+- fix passing null to parameter #1 () of type string is deprecated
 
 ### Added
 - add support Drupal 9.5
+- add official support of drupal 9.5 & 10.0
+
+### Removed
+- drop support of drupal below 9.3.x
+
+### Changed
+- re-enable PHPUnit Symfony Deprecation notice
 
 ## [1.0.0] - 2022-10-21
 ### Added
