@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-12-16
+### Changed
+- new Dev branch following the new new tag semver of Drupal
+
 ## [1.1.0] - 2022-12-16
 ### Fixed
 - fix Issue #3318856 by solantoast: The 'core_version_requirement' constraint (^9) requires the 'core' key not be set
@@ -43,7 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - init module
 
-[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/8.x-1.1...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/antistatique/drupal-timesup/compare/8.x-1.1...2.0.0
 [1.1.0]: https://github.com/antistatique/drupal-timesup/compare/8.x-1.0...8.x-1.1
 [1.0.0]: https://github.com/antistatique/drupal-timesup/compare/8.x-1.0-alpha1...8.x-1.0
 [1.0.0-alpha1]: https://github.com/antistatique/drupal-timesup/releases/tag/8.x-1.0-alpha1
