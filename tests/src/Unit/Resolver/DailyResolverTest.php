@@ -30,25 +30,15 @@ class DailyResolverTest extends UnitTestCase {
    * {@inheritdoc}
    */
   public function setUp(): void {
-    $this->cacheTagsInvalidator = $this->getMockBuilder(CacheTagsInvalidatorInterface::class)
-      ->disableOriginalConstructor()
-      ->getMock();
+    $this->cacheTagsInvalidator = $this->createMock(CacheTagsInvalidatorInterface::class);
 
-    $this->state = $this->getMockBuilder(StateInterface::class)
-      ->disableOriginalConstructor()
-      ->getMock();
+    $this->state = $this->createMock(StateInterface::class);
 
-    $this->time = $this->getMockBuilder(TimeInterface::class)
-      ->disableOriginalConstructor()
-      ->getMock();
+    $this->time = $this->createMock(TimeInterface::class);
 
-    $this->logger = $this->getMockBuilder(LoggerChannelInterface::class)
-      ->disableOriginalConstructor()
-      ->getMock();
+    $this->logger = $this->createMock(LoggerChannelInterface::class);
 
-    $this->loggerFactory = $this->getMockBuilder(LoggerChannelFactoryInterface::class)
-      ->disableOriginalConstructor()
-      ->getMock();
+    $this->loggerFactory = $this->createMock(LoggerChannelFactoryInterface::class);
     $this->loggerFactory->expects($this->once())
       ->method('get')->with('timesup')->willReturn($this->logger);
   }
