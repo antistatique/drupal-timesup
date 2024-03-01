@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix usage of deprecated getMockBuilder by createMock
 
+### Added
+- add Drupal GitlabCI
+
 ## [2.0.0] - 2022-12-16
 ### Changed
 - new Dev branch following the new new tag semver of Drupal
