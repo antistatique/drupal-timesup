@@ -2,15 +2,15 @@
 
 namespace Drupal\Tests\timesup\Unit\Resolver;
 
+use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
-use Drupal\timesup\Periodicity\MidnightResolver;
 use Drupal\Tests\UnitTestCase;
-use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\timesup\Periodicity\MidnightResolver;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\MidnightResolver

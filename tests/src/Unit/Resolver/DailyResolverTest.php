@@ -8,8 +8,8 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
-use Drupal\timesup\Periodicity\DailyResolver;
 use Drupal\Tests\UnitTestCase;
+use Drupal\timesup\Periodicity\DailyResolver;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\DailyResolver

@@ -2,9 +2,9 @@
 
 namespace Drupal\Tests\timesup\Unit\Resolver;
 
-use Drupal\timesup\Resolver\ChainPeriodicityResolver;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Tests\UnitTestCase;
+use Drupal\timesup\Resolver\ChainPeriodicityResolver;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Resolver\ChainPeriodicityResolver
