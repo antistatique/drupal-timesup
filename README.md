@@ -45,19 +45,16 @@ Timesup also expose a some less-relative cache invalidation.
 
 ## Times'up versions
 
-Times'up is only available for Drupal 8 !
-The module is ready to be used in Drupal 8, there are no known issues.
-
-This version should work with all Drupal 8 releases, and it is always
-recommended to keep Drupal core installations up to date.
+Times'up is available for Drupal 8, 9, 10 & Drupal 11 (dev) !
+The module is ready to be used in Drupal, there are no known issues.
 
 ## Dependencies
 
-The Drupal 8 version of Times'up requires nothing !
+The Drupal version of Times'up requires nothing !
 Feel free to use it.
 
 Times'up requires PHP 7.0+ to works properly. We recommend updating to at least
-PHP 7.2 if possible, and ideally PHP 7.4, which is supported as of Drupal 8.8.0.
+PHP 8.1 if possible, and ideally PHP 8.2, which is supported as of Drupal 10.x.
 
 ## Supporting organizations
 
