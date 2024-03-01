@@ -2,8 +2,8 @@
 
 namespace Drupal\timesup\Periodicity;
 
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * The midnight resolver which only apply once by day at midnight.

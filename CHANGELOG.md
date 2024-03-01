@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - fix usage of deprecated getMockBuilder by createMock
+- fix phpcs use statements should be sorted alphabetically - Issue #3373568 by nitin_lama, roshni27, aayushmankotia, Satish_kumar, wengerk
+- add missing call to parent::setUp() on tests
+- fix deprecation creation of dynamic property
+
+### Added
+- add Drupal GitlabCI
 
 ## [2.0.0] - 2022-12-16
 ### Changed

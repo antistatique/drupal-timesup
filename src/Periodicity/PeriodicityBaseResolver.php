@@ -2,12 +2,12 @@
 
 namespace Drupal\timesup\Periodicity;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\State\StateInterface;
-use Drupal\Component\Datetime\TimeInterface;
-use Drupal\timesup\Resolver\PeriodicityResolverInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\timesup\Resolver\PeriodicityResolverInterface;
 
 /**
  * Base class to run periodicity cache-tags invalidations.

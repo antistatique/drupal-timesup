@@ -2,15 +2,15 @@
 
 namespace Drupal\Tests\timesup\Unit\Resolver;
 
+use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
-use Drupal\timesup\Periodicity\MidnightResolver;
 use Drupal\Tests\UnitTestCase;
-use Drupal\Component\Datetime\DateTimePlus;
+use Drupal\timesup\Periodicity\MidnightResolver;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\MidnightResolver
@@ -28,9 +28,45 @@ final class MidnightResolverTest extends UnitTestCase {
   protected $resolver;
 
   /**
+   * The cache tags invalidator.
+   *
+   * @var \Drupal\Core\Cache\CacheTagsInvalidatorInterface
+   */
+  protected $cacheTagsInvalidator;
+
+  /**
+   * The state service.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
+  protected $state;
+
+  /**
+   * The logger.
+   *
+   * @var \Psr\Log\LoggerInterface
+   */
+  protected $logger;
+
+  /**
+   * The logger channel factory service.
+   *
+   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
+   */
+  protected $loggerFactory;
+
+  /**
+   * The time service.
+   *
+   * @var \Drupal\Component\Datetime\TimeInterface
+   */
+  protected $time;
+
+  /**
    * {@inheritdoc}
    */
   public function setUp(): void {
+    parent::setUp();
     $this->cacheTagsInvalidator = $this->createMock(CacheTagsInvalidatorInterface::class);
 
     $this->state = $this->createMock(StateInterface::class);
