@@ -30,6 +30,7 @@ class WeeklyResolverTest extends UnitTestCase {
    * {@inheritdoc}
    */
   public function setUp(): void {
+    parent::setUp();
     $this->cacheTagsInvalidator = $this->createMock(CacheTagsInvalidatorInterface::class);
 
     $this->state = $this->createMock(StateInterface::class);
