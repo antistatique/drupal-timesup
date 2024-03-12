@@ -1,0 +1,23 @@
+timesup.settings:
+  type: config_object
+  label: Times'up settings
+  mapping:
+    resolvers:
+      type: mapping
+      label: 'Resolvers'
+      mapping:
+        minutely:
+          type: boolean
+          label: Enable minutely's Times'up cache resolvers
+        hourly:
+          type: boolean
+          label: Enable daily's Times'up cache resolvers
+        daily:
+          type: boolean
+          label: Enable daily's Times'up cache resolvers
+        midnight:
+          type: boolean
+          label: Enable midnight's Times'up cache resolvers
+        weekly:
+          type: boolean
+          label: Enable weekly's Times'up cache resolvers

@@ -20,6 +20,13 @@ final class MinutelyResolver extends PeriodicityBaseResolver {
    * {@inheritdoc}
    */
   public function shouldApply(): bool {
+    $settings = $this->configFactory->get('timesup.settings');
+    $resolvers = $settings->get('resolvers');
+
+    if (!isset($resolvers['minutely']) || !$resolvers['minutely']) {
+      return FALSE;
+    }
+
     $last_run_per_minute = $this->state->get($this->getLastRunKey());
     return !($this->time->getRequestTime() - $last_run_per_minute < 60);
   }

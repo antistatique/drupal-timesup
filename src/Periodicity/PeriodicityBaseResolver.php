@@ -4,6 +4,7 @@ namespace Drupal\timesup\Periodicity;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -21,6 +22,11 @@ abstract class PeriodicityBaseResolver implements PeriodicityResolverInterface {
    * @var \Drupal\Core\Cache\CacheTagsInvalidatorInterface
    */
   protected $cacheTagsInvalidator;
+
+  /**
+   * The config factory.
+   */
+  protected ConfigFactoryInterface $configFactory;
 
   /**
    * The state service.
@@ -48,6 +54,8 @@ abstract class PeriodicityBaseResolver implements PeriodicityResolverInterface {
    *
    * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cache_tags_invalidator
    *   The cache tags invalidator.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The factory for configuration objects.
    * @param \Drupal\Core\State\StateInterface $state
    *   The state service.
    * @param \Drupal\Component\Datetime\TimeInterface $time
@@ -55,8 +63,9 @@ abstract class PeriodicityBaseResolver implements PeriodicityResolverInterface {
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
    *   The logger channel factory service.
    */
-  public function __construct(CacheTagsInvalidatorInterface $cache_tags_invalidator, StateInterface $state, TimeInterface $time, LoggerChannelFactoryInterface $logger_factory) {
+  public function __construct(CacheTagsInvalidatorInterface $cache_tags_invalidator, ConfigFactoryInterface $config_factory, StateInterface $state, TimeInterface $time, LoggerChannelFactoryInterface $logger_factory) {
     $this->cacheTagsInvalidator = $cache_tags_invalidator;
+    $this->configFactory = $config_factory;
     $this->state = $state;
     $this->time = $time;
     $this->logger = $logger_factory->get('timesup');

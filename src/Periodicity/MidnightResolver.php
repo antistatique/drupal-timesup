@@ -23,6 +23,13 @@ class MidnightResolver extends PeriodicityBaseResolver {
    * {@inheritdoc}
    */
   public function shouldApply(): bool {
+    $settings = $this->configFactory->get('timesup.settings');
+    $resolvers = $settings->get('resolvers');
+
+    if (!isset($resolvers['midnight']) || !$resolvers['midnight']) {
+      return FALSE;
+    }
+
     $today_midnight = $this->getTodayMidnight();
     $last_run = $this->state->get($this->getLastRunKey());
     return $last_run <= $today_midnight->getTimestamp();
