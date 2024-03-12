@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3']
+        drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3', '11.0']
         module: ['timesup']
         experimental: [ false ]
 
@@ -34,9 +34,13 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5', '10.0', '10.1', '10.2', '11.0']
+        drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3', '11.0']
         module: [ 'timesup' ]
         experimental: [ false ]
+        exclude:
+          - drupal_version: '11.0'
+            module: 'timesup'
+            experimental: false
         include:
           - drupal_version: '11.0'
             module: 'timesup'
