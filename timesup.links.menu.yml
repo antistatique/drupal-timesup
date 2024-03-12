@@ -1,0 +1,5 @@
+timesup.settings:
+  title: Times'up
+  route_name: timesup.settings
+  description: Configure features of Times'up.
+  parent: system.admin_config_system

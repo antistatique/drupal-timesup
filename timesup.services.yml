@@ -7,7 +7,7 @@ services:
   timesup.periodicity_resolver.base:
     private: true
     class: Drupal\timesup\Periodicity\PeriodicityBaseResolver
-    arguments: ['@cache_tags.invalidator', '@state', '@datetime.time', '@logger.factory']
+    arguments: ['@cache_tags.invalidator', '@config.factory', '@state', '@datetime.time', '@logger.factory']
 
   timesup.periodicity_resolver.minutely:
     class: Drupal\timesup\Periodicity\MinutelyResolver
