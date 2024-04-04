@@ -5,6 +5,8 @@ namespace Drupal\Tests\timesup\Unit\Resolver;
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\Core\State\StateInterface;
@@ -42,6 +44,20 @@ final class MidnightResolverTest extends UnitTestCase {
   protected $state;
 
   /**
+   * The config factory service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * The mocked configuration object timesup.settings.
+   *
+   * @var \Drupal\Core\Config\ImmutableConfig
+   */
+  protected $settings;
+
+  /**
    * The logger.
    *
    * @var \Psr\Log\LoggerInterface
@@ -69,6 +85,11 @@ final class MidnightResolverTest extends UnitTestCase {
     parent::setUp();
     $this->cacheTagsInvalidator = $this->createMock(CacheTagsInvalidatorInterface::class);
 
+    // Create a mock config factory and config object.
+    $this->configFactory = $this->createMock(ConfigFactoryInterface::class);
+    $this->settings = $this->createMock(ImmutableConfig::class);
+    $this->configFactory->method('get')->with('timesup.settings')->willReturn($this->settings);
+
     $this->state = $this->createMock(StateInterface::class);
 
     $this->time = $this->createMock(TimeInterface::class);
@@ -84,7 +105,7 @@ final class MidnightResolverTest extends UnitTestCase {
    * @covers ::getCacheTags
    */
   public function testGetCacheTags() {
-    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->state, $this->time, $this->loggerFactory);
+    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->configFactory, $this->state, $this->time, $this->loggerFactory);
     $tags = $this->invokeMethod($resolver, 'getCacheTags');
     $this->assertSame(['timesup', 'timesup:midnight'], $tags);
   }
@@ -93,9 +114,25 @@ final class MidnightResolverTest extends UnitTestCase {
    * @covers ::getLastRunKey
    */
   public function testGetLastRunKey() {
-    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->state, $this->time, $this->loggerFactory);
+    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->configFactory, $this->state, $this->time, $this->loggerFactory);
     $key = $this->invokeMethod($resolver, 'getLastRunKey');
     $this->assertEquals('timesup.last_run.MidnightResolver', $key);
+  }
+
+  /**
+   * @covers ::shouldApply
+   */
+  public function testShouldApplySettingsDisabled() {
+    $this->settings->expects($this->once())
+      ->method('get')->with('resolvers')->willReturn(['midnight' => FALSE]);
+
+    $this->state->expects($this->never())
+      ->method('get')->with('timesup.last_run.MidnightResolver');
+    $this->time->expects($this->never())
+      ->method('getRequestTime');
+
+    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->configFactory, $this->state, $this->time, $this->loggerFactory);
+    $this->assertFalse($resolver->shouldApply());
   }
 
   /**
@@ -104,6 +141,9 @@ final class MidnightResolverTest extends UnitTestCase {
    * @dataProvider shouldApplyProvider
    */
   public function testShouldApply($request_time, $last_run, $expected) {
+    $this->settings->expects($this->once())
+      ->method('get')->with('resolvers')->willReturn(['midnight' => TRUE]);
+
     $this->state->expects($this->any())
       ->method('get')->willReturn($last_run);
     $this->time->expects($this->any())
@@ -116,6 +156,7 @@ final class MidnightResolverTest extends UnitTestCase {
     $midnightResolverMock = $this->getMockBuilder(MidnightResolver::class)
       ->setConstructorArgs([
         $this->cacheTagsInvalidator,
+        $this->configFactory,
         $this->state,
         $this->time,
         $this->loggerFactory,
@@ -163,7 +204,7 @@ final class MidnightResolverTest extends UnitTestCase {
     $this->logger->expects($this->once())
       ->method('notice')->with("Purging Time's up time-sensitive cache-tags: timesup, timesup:midnight.");
 
-    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->state, $this->time, $this->loggerFactory);
+    $resolver = new MidnightResolver($this->cacheTagsInvalidator, $this->configFactory, $this->state, $this->time, $this->loggerFactory);
     $resolver->purge();
   }
 

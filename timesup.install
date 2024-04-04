@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for the Times'up module.
+ */
+
+/**
+ * Add configuration settings to enable or disable Resolvers.
+ *
+ * NOTE: This update hook changes the 2.1.x config structure.
+ * Allowing to enable or disable each resolver independently.
+ */
+function timesup_update_8001() {
+  // Get module configuration.
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('timesup.settings');
+
+  // Set hosts.
+  $config->set('resolvers', [
+    'minutely' => 1,
+    'hourly' => 1,
+    'daily' => 1,
+    'midnight' => 1,
+    'weekly' => 1,
+  ]);
+
+  // Save the configuration.
+  $config->save();
+}

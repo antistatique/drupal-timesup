@@ -1,0 +1,9 @@
+timesup.settings:
+  path: '/admin/config/timesup/settings'
+  defaults:
+    _form: '\Drupal\timesup\Form\SettingsForm'
+    _title: 'Settings'
+  requirements:
+    _permission: 'administer timesup'
+  options:
+    _admin_route: TRUE

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - add tests with drupal 10.3
+- add configuration settings `timesup.settings.resolvers` to enable or disable resolvers.
 
 ## [2.0.1] - 2024-03-01
 ### Fixed
