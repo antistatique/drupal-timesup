@@ -11,7 +11,7 @@ timesup.settings:
           label: Enable minutely's Times'up cache resolvers
         hourly:
           type: boolean
-          label: Enable daily's Times'up cache resolvers
+          label: Enable hourly Times'up cache resolvers
         daily:
           type: boolean
           label: Enable daily's Times'up cache resolvers
