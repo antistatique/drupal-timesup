@@ -35,7 +35,7 @@ class SettingsFormTest extends BrowserTestBase {
    * Ensure the routing permissions works.
    */
   public function testAccessPermission() {
-    // Create a user whitout permission for tests.
+    // Create a user without permission for tests.
     $account = $this->drupalCreateUser();
     $this->drupalLogin($account);
 
