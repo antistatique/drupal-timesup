@@ -158,7 +158,7 @@ class MinutelyResolverTest extends UnitTestCase {
    * @return array
    *   The menu level scenario.
    */
-  public function shouldApplyProvider() {
+  public static function shouldApplyProvider() {
     return [
       'Never run' => [1583280000, NULL, TRUE],
       'Run just now' => [1583280000, 1583280001, FALSE],
