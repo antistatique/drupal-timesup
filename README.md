@@ -26,6 +26,8 @@ E.g. Refresh the cache of my listing of Events every 7th of the month.
 
 * Highly extendable code-base system using ChainResolver design pattern.
 
+* Enable or disable resolvers using configuration settings.
+
 ## Defaults exposed cache tags
 
 The system will store the last run of every periodicity (daily, weekly, ...)
