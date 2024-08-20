@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - upgrade Docker Database mariadb 10.3.8 -> 10.6
 
+### Fixed
+- fix obsolete docker-compose command in CIs
+
 ## [2.0.2] - 2024-06-27
 ### Added
 - add tests with drupal 10.3
