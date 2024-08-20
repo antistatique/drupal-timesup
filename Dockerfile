@@ -1,8 +1,8 @@
 ARG BASE_IMAGE_TAG=10.2
 FROM wengerk/drupal-for-contrib:${BASE_IMAGE_TAG}
 
-# Disable deprecation notice.
-# ENV SYMFONY_DEPRECATIONS_HELPER=disabled
+# Disable deprecation notice since PHPUnit 10 with Drupal 10.2 and upper.
+ENV SYMFONY_DEPRECATIONS_HELPER=weak
 
 # Register the Drupal and DrupalPractice Standard with PHPCS.
 RUN ./vendor/bin/phpcs --config-set installed_paths \
