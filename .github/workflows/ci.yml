@@ -15,6 +15,10 @@ jobs:
         drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3', '11.0']
         module: ['timesup']
         experimental: [ false ]
+        include:
+          - drupal_version: '11.1'
+            module: 'timesup'
+            experimental: true
 
     steps:
       - uses: actions/checkout@v4
@@ -37,12 +41,8 @@ jobs:
         drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3', '11.0']
         module: [ 'timesup' ]
         experimental: [ false ]
-        exclude:
-          - drupal_version: '11.0'
-            module: 'timesup'
-            experimental: false
         include:
-          - drupal_version: '11.0'
+          - drupal_version: '11.1'
             module: 'timesup'
             experimental: true
 

@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix obsolete docker-compose command in CIs
 
+### Added
+- add official support of drupal 11.0
+
 ## [2.0.2] - 2024-06-27
 ### Added
 - add tests with drupal 10.3
