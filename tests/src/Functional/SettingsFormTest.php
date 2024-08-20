@@ -53,7 +53,7 @@ class SettingsFormTest extends BrowserTestBase {
   /**
    * Ensure the configuration storage works as expected.
    */
-  public function testConfigurationPersistance() {
+  public function testConfigurationPersistence() {
     $settings = $this->container->get('config.factory')->getEditable('timesup.settings');
     $settings->set('resolvers', [
       'minutely' => FALSE,
