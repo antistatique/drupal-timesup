@@ -47,7 +47,7 @@ Timesup also expose a some less-relative cache invalidation.
 
 ## Times'up versions
 
-Times'up is available for Drupal 8, 9, 10 & Drupal 11 (dev) !
+Times'up is available for Drupal 8, 9, 10 & Drupal 11 !
 The module is ready to be used in Drupal, there are no known issues.
 
 ## Dependencies
