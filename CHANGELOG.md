@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.0.5] - 2025-05-15
 ### Removed
 - drop support of Drupal 9.x
 - remove scanning CSS/JS with phpcs (deprecated and support will be removed in PHP_CodeSniffer 4.0)
@@ -86,7 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - init module
 
-[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/2.0.4...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/2.0.5...HEAD
+[2.0.5]: https://github.com/antistatique/drupal-timesup/compare/2.0.4...2.0.5
 [2.0.4]: https://github.com/antistatique/drupal-timesup/compare/2.0.3...2.0.4
 [2.0.3]: https://github.com/antistatique/drupal-timesup/compare/2.0.2...2.0.3
 [2.0.2]: https://github.com/antistatique/drupal-timesup/compare/2.0.1...2.0.2
