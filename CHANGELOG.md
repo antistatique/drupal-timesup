@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add official support of drupal 10.6
 - add official support of drupal 11.3
 
+### Changed
+- deprecation Notice: Method ReflectionProperty::setAccessible() is deprecated since 8.1
+
 ## [2.0.6] - 2025-11-07
 ### Added
 - add official support of drupal 10.5
