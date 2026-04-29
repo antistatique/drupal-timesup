@@ -144,10 +144,8 @@ final class MidnightResolverTest extends UnitTestCase {
     $this->settings->expects($this->once())
       ->method('get')->with('resolvers')->willReturn(['midnight' => TRUE]);
 
-    $this->state->expects($this->any())
-      ->method('get')->willReturn($last_run);
-    $this->time->expects($this->any())
-      ->method('getRequestTime')->willReturn($request_time);
+    $this->state->method('get')->willReturn($last_run);
+    $this->time->method('getRequestTime')->willReturn($request_time);
 
     $today_midnight = new DateTimePlus('now', new \DateTimeZone('UTC'));
     $today_midnight->setTimestamp($request_time);
