@@ -82,6 +82,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+      - name: Strip PHPUnit attributes incompatible with upgrade_status analysis
+        run: |
+          find ./tests/src -name '*.php' -exec sed -i '/^[[:space:]]*#\[AllowMockObjectsWithoutExpectations/d' {} +
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
       - run: docker compose -f docker-compose.yml pull --include-deps drupal

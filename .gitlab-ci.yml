@@ -53,3 +53,16 @@ phpcs:
 phpstan (previous major):
   before_script:
     - find $DRUPAL_PROJECT_FOLDER/tests/src -name '*.php' -exec sed -i '/^[[:space:]]*#\[RunTestsInSeparateProcesses/d' {} +
+    - find $DRUPAL_PROJECT_FOLDER/tests/src -name '*.php' -exec sed -i '/^[[:space:]]*#\[AllowMockObjectsWithoutExpectations/d' {} +
+
+phpstan:
+  before_script:
+    - find $DRUPAL_PROJECT_FOLDER/tests/src -name '*.php' -exec sed -i '/^[[:space:]]*#\[AllowMockObjectsWithoutExpectations/d' {} +
+
+phpstan (max PHP version):
+  before_script:
+    - find $DRUPAL_PROJECT_FOLDER/tests/src -name '*.php' -exec sed -i '/^[[:space:]]*#\[AllowMockObjectsWithoutExpectations/d' {} +
+
+phpstan (next minor):
+  before_script:
+    - find $DRUPAL_PROJECT_FOLDER/tests/src -name '*.php' -exec sed -i '/^[[:space:]]*#\[AllowMockObjectsWithoutExpectations/d' {} +

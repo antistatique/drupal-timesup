@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add PHPUnit 10 PHP attributes (`#[RunTestsInSeparateProcesses]`) to all test classes
 - replace deprecated PHPUnit any() invocation matcher with direct method stubs
 - run upgrade-status against Drupal 11.3
+- allow tests without expectation using a Mock
 
 ## [2.0.7] - 2026-02-13
 ### Added

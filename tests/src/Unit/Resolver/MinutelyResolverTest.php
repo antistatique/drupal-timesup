@@ -12,12 +12,14 @@ use Drupal\Core\State\StateInterface;
 use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
 use Drupal\Tests\UnitTestCase;
 use Drupal\timesup\Periodicity\MinutelyResolver;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\MinutelyResolver
  *
  * @group timesup
  */
+#[AllowMockObjectsWithoutExpectations]
 class MinutelyResolverTest extends UnitTestCase {
   use InvokeMethodTrait;
 

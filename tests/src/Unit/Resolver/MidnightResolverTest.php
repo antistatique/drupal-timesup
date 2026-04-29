@@ -13,12 +13,14 @@ use Drupal\Core\State\StateInterface;
 use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
 use Drupal\Tests\UnitTestCase;
 use Drupal\timesup\Periodicity\MidnightResolver;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\MidnightResolver
  *
  * @group timesup
  */
+#[AllowMockObjectsWithoutExpectations]
 final class MidnightResolverTest extends UnitTestCase {
   use InvokeMethodTrait;
 
