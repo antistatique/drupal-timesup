@@ -5,12 +5,14 @@ namespace Drupal\Tests\timesup\Unit\Resolver;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Tests\UnitTestCase;
 use Drupal\timesup\Resolver\ChainPeriodicityResolver;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Resolver\ChainPeriodicityResolver
  *
  * @group timesup
  */
+#[Group('timesup')]
 class ChainPeriodicityResolverTest extends UnitTestCase {
 
   /**

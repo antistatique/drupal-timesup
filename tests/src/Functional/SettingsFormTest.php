@@ -3,6 +3,7 @@
 namespace Drupal\Tests\timesup\Functional;
 
 use Drupal\Tests\BrowserTestBase;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
@@ -12,6 +13,8 @@ use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
  * @group timesup_functional
  */
 #[RunTestsInSeparateProcesses]
+#[Group('timesup')]
+#[Group('timesup_functional')]
 class SettingsFormTest extends BrowserTestBase {
 
   /**

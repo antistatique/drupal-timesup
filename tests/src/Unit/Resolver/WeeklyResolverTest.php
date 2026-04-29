@@ -14,6 +14,7 @@ use Drupal\Tests\UnitTestCase;
 use Drupal\timesup\Periodicity\WeeklyResolver;
 use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\WeeklyResolver
@@ -21,6 +22,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * @group timesup
  */
 #[AllowMockObjectsWithoutExpectations]
+#[Group('timesup')]
 class WeeklyResolverTest extends UnitTestCase {
   use InvokeMethodTrait;
 

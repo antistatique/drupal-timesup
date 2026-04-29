@@ -14,6 +14,7 @@ use Drupal\Tests\UnitTestCase;
 use Drupal\timesup\Periodicity\HourlyResolver;
 use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\HourlyResolver
@@ -21,6 +22,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * @group timesup
  */
 #[AllowMockObjectsWithoutExpectations]
+#[Group('timesup')]
 class HourlyResolverTest extends UnitTestCase {
   use InvokeMethodTrait;
 
