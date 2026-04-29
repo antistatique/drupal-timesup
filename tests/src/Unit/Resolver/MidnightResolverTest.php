@@ -14,6 +14,7 @@ use Drupal\Tests\timesup\Traits\InvokeMethodTrait;
 use Drupal\Tests\UnitTestCase;
 use Drupal\timesup\Periodicity\MidnightResolver;
 use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @coversDefaultClass \Drupal\timesup\Periodicity\MidnightResolver
@@ -142,6 +143,7 @@ final class MidnightResolverTest extends UnitTestCase {
    *
    * @dataProvider shouldApplyProvider
    */
+  #[DataProvider('shouldApplyProvider')]
   public function testShouldApply($request_time, $last_run, $expected) {
     $this->settings->expects($this->once())
       ->method('get')->with('resolvers')->willReturn(['midnight' => TRUE]);

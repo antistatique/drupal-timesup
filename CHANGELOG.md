@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - replace deprecated PHPUnit any() invocation matcher with direct method stubs
 - run upgrade-status against Drupal 11.3
 - allow tests without expectation using a Mock
+- add PHPUnit 10 PHP attributes (`#[DataProvider]`) to all test classes using dataProvider annotation
 
 ## [2.0.7] - 2026-02-13
 ### Added
