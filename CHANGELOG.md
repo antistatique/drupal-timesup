@@ -5,8 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- add PHPUnit 10 PHP attributes (`#[RunTestsInSeparateProcesses]`) to all test classes
 
-## 2.0.7 - 2026-02-13
+## [2.0.7] - 2026-02-13
 ### Added
 - add official support of drupal 10.6
 - add official support of drupal 11.3
