@@ -2,6 +2,7 @@ Antistatique
 antistatique
 cleancode
 codesize
+codesniffer
 Cyclomatic
 interesed
 libbz
