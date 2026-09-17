@@ -5,12 +5,15 @@
  * Module file for timesup.
  */
 
+use Drupal\Core\Hook\Attribute\LegacyHook;
+use Drupal\timesup\Hook\TimesupHooks;
+
 /**
  * Implements hook_cron().
  *
  * Adds clean up job to drop expired cache tags.
  */
+#[LegacyHook]
 function timesup_cron() {
-  $timesup_chain = \Drupal::service('timesup.chain_periodicity_resolver');
-  $timesup_chain->process();
+  \Drupal::service(TimesupHooks::class)->cron();
 }
