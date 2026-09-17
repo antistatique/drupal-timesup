@@ -5,11 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.0.9] - 2026-09-17
 ### Fixed
 - fix: add 'codesniffer' to cspell ignore wordlist
 
 ### Changed
-- refactor: convert hook_cron() to an OOP hook implementation using the #[Hook] attribute
+- refactor: convert hook_cron() to an OOP hook implementation using the #\[Hook] attribute
 
 ## [2.0.8] - 2026-04-29
 ### Added
@@ -125,7 +127,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - init module
 
-[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/2.0.8...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-timesup/compare/2.0.9...HEAD
+[2.0.9]: https://github.com/antistatique/drupal-timesup/compare/2.0.8...2.0.9
 [2.0.8]: https://github.com/antistatique/drupal-timesup/compare/2.0.7...2.0.8
 [2.0.7]: https://github.com/antistatique/drupal-timesup/compare/2.0.6...2.0.7
 [2.0.6]: https://github.com/antistatique/drupal-timesup/compare/2.0.5...2.0.6
