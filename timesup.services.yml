@@ -4,6 +4,9 @@ services:
     tags:
       - { name: service_collector, call: addResolver, tag: timesup.periodicity_resolver }
 
+  Drupal\timesup\Resolver\ChainPeriodicityResolver:
+    alias: timesup.chain_periodicity_resolver
+
   timesup.periodicity_resolver.base:
     private: true
     class: Drupal\timesup\Periodicity\PeriodicityBaseResolver
@@ -32,3 +35,7 @@ services:
     parent: timesup.periodicity_resolver.base
     tags:
       - { name: timesup.periodicity_resolver, priority: 200 }
+
+  Drupal\timesup\Hook\TimesupHooks:
+    class: Drupal\timesup\Hook\TimesupHooks
+    autowire: true

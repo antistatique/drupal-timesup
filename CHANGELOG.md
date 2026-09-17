@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix: add 'codesniffer' to cspell ignore wordlist
 
+### Changed
+- refactor: convert hook_cron() to an OOP hook implementation using the #[Hook] attribute
+
 ## [2.0.8] - 2026-04-29
 ### Added
 - add experimental coverage of Drupal 11.4
