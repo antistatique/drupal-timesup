@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - docs(readme): update the supported Drupal versions
 - ci(styles): run code styles jobs on PHP 8.4
+- refactor: mark internal classes final and use constructor property promotion
 
 ### Removed
 - ci: remove PhpDeprecationDetector (phpdd) job, tool and docs

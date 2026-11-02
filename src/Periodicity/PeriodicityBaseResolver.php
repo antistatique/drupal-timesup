@@ -17,32 +17,6 @@ abstract class PeriodicityBaseResolver implements PeriodicityResolverInterface {
   use StringTranslationTrait;
 
   /**
-   * The cache tags invalidator.
-   *
-   * @var \Drupal\Core\Cache\CacheTagsInvalidatorInterface
-   */
-  protected $cacheTagsInvalidator;
-
-  /**
-   * The config factory.
-   */
-  protected ConfigFactoryInterface $configFactory;
-
-  /**
-   * The state service.
-   *
-   * @var \Drupal\Core\State\StateInterface
-   */
-  protected $state;
-
-  /**
-   * The time service.
-   *
-   * @var \Drupal\Component\Datetime\TimeInterface
-   */
-  protected $time;
-
-  /**
    * The registered logger for this channel.
    *
    * @var \Drupal\Core\Logger\LoggerChannelInterface
@@ -52,9 +26,9 @@ abstract class PeriodicityBaseResolver implements PeriodicityResolverInterface {
   /**
    * Constructs a PeriodicityBaseResolver object.
    *
-   * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cache_tags_invalidator
+   * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cacheTagsInvalidator
    *   The cache tags invalidator.
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    *   The factory for configuration objects.
    * @param \Drupal\Core\State\StateInterface $state
    *   The state service.
@@ -63,11 +37,13 @@ abstract class PeriodicityBaseResolver implements PeriodicityResolverInterface {
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
    *   The logger channel factory service.
    */
-  public function __construct(CacheTagsInvalidatorInterface $cache_tags_invalidator, ConfigFactoryInterface $config_factory, StateInterface $state, TimeInterface $time, LoggerChannelFactoryInterface $logger_factory) {
-    $this->cacheTagsInvalidator = $cache_tags_invalidator;
-    $this->configFactory = $config_factory;
-    $this->state = $state;
-    $this->time = $time;
+  public function __construct(
+    protected CacheTagsInvalidatorInterface $cacheTagsInvalidator,
+    protected ConfigFactoryInterface $configFactory,
+    protected StateInterface $state,
+    protected TimeInterface $time,
+    LoggerChannelFactoryInterface $logger_factory,
+  ) {
     $this->logger = $logger_factory->get('timesup');
   }
 
