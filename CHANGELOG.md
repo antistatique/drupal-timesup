@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - refactor: mark internal classes final and use constructor property promotion
 - build(docker): use Drupal 11.3 as default base image
 - ci: rename the docker-compose build steps to docker compose
+- ci: test Drupal 11.4 as a stable version
+- build(docker): use Drupal 11.4 as default base image
+- ci: run Upgrade Status on Drupal 11.4
 
 ### Removed
 - ci: remove PhpDeprecationDetector (phpdd) job, tool and docs
