@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - build(deps): allow drupal/coder ^9
 
+### Changed
+- docs(readme): update the supported Drupal versions
+
 ### Removed
 - ci: remove PhpDeprecationDetector (phpdd) job, tool and docs
 
