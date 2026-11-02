@@ -8,7 +8,7 @@ use Drupal\timesup\Resolver\ChainPeriodicityResolver;
 /**
  * Hook implementations for timesup.
  */
-class TimesupHooks {
+final class TimesupHooks {
 
   /**
    * Constructs a new TimesupHooks object.
