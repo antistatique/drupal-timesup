@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ci(styles): run code styles jobs on PHP 8.4
 - refactor: mark internal classes final and use constructor property promotion
 - build(docker): use Drupal 11.3 as default base image
+- ci: rename the docker-compose build steps to docker compose
 
 ### Removed
 - ci: remove PhpDeprecationDetector (phpdd) job, tool and docs
